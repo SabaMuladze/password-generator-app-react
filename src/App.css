@@ -83,6 +83,11 @@ input[type='range']::-webkit-slider-thumb {
 
 }
 
+input[type='range']::-webkit-slider-thumb:hover {
+  border: 2px solid #A4FFAF;
+  background-color: #08070B;
+}
+
 input[type='range']::-webkit-slider-runnable-track {
   appearance: none;
   background-color: #18171F;
@@ -102,4 +107,86 @@ form {
   z-index: 1;
   left: 0;
   top: 0;
+}
+
+.checkbox {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+#check {
+  display: flex;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 2px solid #E6E5EA;
+}
+
+#check:hover {
+  border: 2px solid #A4FFAF;
+
+}
+
+#check:checked {
+  background-image: url(assets/images/icon-check.svg);
+  background-position: center;
+  background-size: 15px 13px;
+  background-repeat: no-repeat;
+  background-color: #A4FFAF;
+  border: none;
+}
+
+.strength {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #18171F;
+}
+
+.strengthP {
+  color: #817D92;
+}
+
+.btn {
+  background-color: #A4FFAF;
+  padding: 20px 0;
+  width: 100%;
+  margin-top: 2rem;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border: 2px solid #A4FFAF;
+
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid #A4FFAF;
+  color: #A4FFAF;
+}
+
+.btn:hover svg path {
+  fill: #A4FFAF;
+}
+
+@media (min-width:768px) {
+  .container {
+    padding: 133px 1rem 4rem 1rem;
+
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .placeOfGeneration,
+  .generate,
+  .strength {
+    padding: 1.5rem 2rem;
+  }
 }
