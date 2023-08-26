@@ -32,10 +32,10 @@ function App() {
 
   }
 
-  const copyHandler = () => {
+  const copyHandler = (text) => {
     setShowCopy(true)
 
-
+    navigator.clipboard.writeText(password)
     setTimeout(() => {
       setShowCopy(false)
     }, 2000);
