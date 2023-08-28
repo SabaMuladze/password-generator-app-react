@@ -12,23 +12,25 @@ function App() {
   const [password, setPassword] = useState('')
 
   const generatePassword = () => {
-    let charset = '';
-    if (uppercase) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    if (lowercase) charset += 'abcdefghijklmnopqrstuvwxyz';
-    if (numbers) charset += '0123456789';
-    if (symbols) charset += '!@#$%^&*()_+[]{}|;:,.<>?';
+    const check = symbols || numbers || lowercase || uppercase;
+    if (check) {
 
-    let newPass = ''
+      let charset = '';
+      if (uppercase) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      if (lowercase) charset += 'abcdefghijklmnopqrstuvwxyz';
+      if (numbers) charset += '0123456789';
+      if (symbols) charset += '!@#$%^&*()_+[]{}|;:,.<>?';
 
-    for (let index = 0; index < inpval; index++) {
-      let randomIndex = Math.floor(Math.random() * charset.length);
-      newPass += charset[randomIndex]
+      let newPass = ''
 
+      for (let index = 0; index < inpval; index++) {
+        let randomIndex = Math.floor(Math.random() * charset.length);
+        newPass += charset[randomIndex]
+
+      }
+
+      setPassword(newPass)
     }
-
-    console.log(newPass);
-
-    setPassword(newPass)
 
   }
 
@@ -42,6 +44,10 @@ function App() {
 
 
   }
+
+
+
+
 
   return (
     <>
